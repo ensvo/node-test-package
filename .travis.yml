@@ -1,0 +1,31 @@
+sudo: false
+language: C
+services:
+- docker
+cache:
+  directories:
+  - "$HOME/.cache"
+script:
+- sudo apt-get install -y nodejs
+- npm pack
+
+deploy:
+  provider: packagecloud
+  edge:
+    source: computology/dpl
+    branch: pcloud_npm
+  username: capotej
+  repository: node-test
+  token: "${PACKAGECLOUD_TOKEN}"
+  dist: "node"
+  package_glob: "*.{tgz}"
+  skip_cleanup: true
+  on:
+    all_branches: true
+
+notifications:
+  email:
+    recipients:
+    - julio@packagecloud.io
+    on_success: change
+    on_failure: always
