@@ -16,7 +16,7 @@ deploy:
   username: capotej
   repository: node-test
   token: "${PACKAGECLOUD_TOKEN}"
-  dist: node
+  distro: node
   package_glob: *.{tgz}
   skip_cleanup: true
   on:
