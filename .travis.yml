@@ -2,7 +2,7 @@ sudo: false
 language: node_js
 cache:
   directories:
-    - "node_modules"
+    - node_modules
 script:
 - npm pack
 
@@ -14,8 +14,8 @@ deploy:
   username: capotej
   repository: node-test
   token: "${PACKAGECLOUD_TOKEN}"
-  dist: "node"
-  package_glob: "*.{tgz}"
+  dist: node
+  package_glob: *.{tgz}
   skip_cleanup: true
   on:
     all_branches: true
