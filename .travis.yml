@@ -1,12 +1,12 @@
 sudo: false
-language: C
-services:
-- docker
+language: node_js
+node_js:
+  - "node"
+  - "8"
 cache:
   directories:
   - "$HOME/.cache"
 script:
-- sudo apt-get install -y nodejs
 - npm pack
 
 deploy:
