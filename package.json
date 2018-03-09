@@ -1,6 +1,6 @@
 {
   "name": "packagecloud-test",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Test package for packagecloud",
   "main": "index.js",
   "scripts": {
