@@ -15,6 +15,7 @@ deploy:
     source: computology/dpl
     branch: pcloud_timeouts
   username: capotej
+  read_timeout: 600
   repository: node-test
   token: "${PACKAGECLOUD_TOKEN}"
   dist: node
