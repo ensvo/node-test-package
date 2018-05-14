@@ -19,7 +19,7 @@ deploy:
   repository: node-test
   token: "${PACKAGECLOUD_TOKEN}"
   dist: node
-  package_glob: "*.{tgz}"
+  package_glob: "*.tgz"
   skip_cleanup: true
   on:
     all_branches: true
