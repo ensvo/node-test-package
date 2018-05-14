@@ -13,7 +13,7 @@ deploy:
   provider: packagecloud
   edge:
     source: computology/dpl
-    branch: pcloud_npm
+    branch: pcloud_timeouts
   username: capotej
   repository: node-test
   token: "${PACKAGECLOUD_TOKEN}"
