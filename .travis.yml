@@ -1,7 +1,10 @@
-language: generic 
+language: generic
 script:
 - npm pack
 deploy:
   provider: packagecloud
   repository: repo
   username: xenonlizjr
+  token:
+    secure: Ms7tZp4uTxYwKiaLOs/aKUBHBEyGMPq7B2A2koKQpgqyP0GcV1Kz9iUHisFo/LpHx2Ri0M6+w67VlIQ0QVUAncpfiAuF0iqr7MrCvnfq5KyMp8OoYxll3hZjgnsLLR649LYkOY6iukWlipB0kdiy8ubSNle6tp89H/K6G+sioRstN4Qv8pPBAjC0//1F/siW+P6tiei6WSMlbP+wBBa5aAckH3KxNTrsPaFwCi+njm3o5Nblipg4tFF9q7jOxrca9pTXiOnozkUY/aVWFUlTXaDZTGj6s0BN4S4DVN0X9zhhIbY0vepfQS5Wku8c0jPxG2cXLbI6VkOkTL5mE7cLJDN3KjZEuMSJz2jZd2MWISsLL7oCqkoDiHuZ1XMD5TaJUWOp2vDWtUk8srtjvNqTnCAw8Dxfm5FODkLZZovq8xwaAt2bnfGD6IR7rRFm4ccljegUeRejeAI58TL80W7OlYH/Y+UDtP+E2J6TGGn6iVTAzO2l2ul1pgDok+6P6cnjwYy5eQWxfGUkdnUryx+n7kl66fT1pXNvkl9CwJ4SMBfrdCgo24K5aSRhr5EoyW1hesbWVga3n9EHSPThTIJdv5ZnGOVZACs9XvjH0bumRDevEywnRuk7GhFZ1Y4QqYEd6UoYaxMJ+QsXlHpA6t+igw+UUNy557EnpfMySkjvk0Y=
+  dist: node 
