@@ -1,32 +1,7 @@
-sudo: false
-language: node_js
-node_js:
-- 7
-cache:
-  directories:
-  - node_modules
-
+language: generic 
 script:
 - npm pack
-
 deploy:
   provider: packagecloud
-  edge:
-    source: computology/dpl
-    branch: pcloud_timeouts
-  username: capotej
-  read_timeout: 600
-  repository: node-test
-  token: "${PACKAGECLOUD_TOKEN}"
-  dist: node
-  package_glob: "*.{tgz}"
-  skip_cleanup: true
-  on:
-    all_branches: true
-
-notifications:
-  email:
-    recipients:
-    - julio@packagecloud.io
-    on_success: change
-    on_failure: always
+  repository: repo
+  username: xenonlizjr
