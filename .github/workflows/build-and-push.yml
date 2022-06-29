@@ -1,0 +1,40 @@
+name: Build and Push to Packagecloud
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 14
+    - run: npm pack
+
+    - run: ls
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: npm-package
+        path: packagecloud-test-1.0.10.tgz
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/download-artifact@v2
+      with:
+        name: npm-package
+    
+    - run: ls
+
+    - uses: danielmundi/upload-packagecloud@v1
+      with:
+        PACKAGE-NAME: packagecloud-test-1.0.10.tgz
+        PACKAGECLOUD-USERNAME: lizv
+        PACKAGECLOUD-REPO: repo
+        PACKAGECLOUD-DISTRIB: node
+        PACKAGECLOUD-TOKEN: ${{ secrets.packagecloud_token }}
